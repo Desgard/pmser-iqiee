@@ -1,0 +1,21 @@
+
+key_dic = [
+    'title',
+    'link',
+    'project',
+    'description',
+    'key',
+    'summary',
+    'type',
+    'priority',
+    'status',
+    'resolution',
+    'assignee',
+    'reporter',
+    'created',
+    'updated',
+    'resolved',
+    'version',
+    'fixVersion',
+    'component',
+]
