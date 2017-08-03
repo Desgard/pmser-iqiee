@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import requests
 from issue import Issue
 from config import key_dic
@@ -10,7 +12,7 @@ params = {
     'tempMax': '1000',
 }
 
-cookie = 'JSESSIONID=1DE225A2B4E6D4631A598BC9101E39C8; atlassian.xsrf.token=BIM2-2D98-FCIE-BUVL|78b12b8ec2372339dd338a99a294c6bd2664adb6|lin'
+cookie = 'JSESSIONID=8DB196651065C1561CF2288807BCE054; atlassian.xsrf.token=BIM2-2D98-FCIE-BUVL|4d566777d0238c5f80370558535bdad7d2b7859a|lin'
 
 headers = {
     'Pragma': 'no-cache',
@@ -29,7 +31,7 @@ headers = {
 r = requests.get(xml_url, headers = headers, params = params)
 
 xml_txt = r.text
-
+# print(xml_txt)
 
 try:
     import xml.etree.cElementTree as ET
@@ -51,6 +53,7 @@ for item in root.iter('item'):
             dict[key] = iss_item.text
     res.append(dict)
 
+# print(res)
 # To translate mine class
 issues_res = []
 

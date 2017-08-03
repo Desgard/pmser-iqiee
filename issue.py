@@ -28,7 +28,12 @@ class Issue:
         for key in key_dic:
             if dic.__contains__(key) and hasattr(self, key):
                 setattr(self, key, dic[key])
-        self.resolved_time = parser.parse(self.resolved)
+
+        try:
+            self.resolved_time = parser.parse(self.resolved)
+        except(ValueError):
+            pass
+
 
     def __str__(self):
         time = self.resolved_time.strftime("%y-%b-%d")
@@ -38,6 +43,16 @@ class Issue:
     def is_in_week(self):
         now = datetime.today()
         return now.strftime("%W") is self.resolved_time.strftime("%W")
+
+    def is_complete(self):
+        if self.status == "已解决":
+            return True
+        return False
+
+    def is_running(self):
+        if self.status == "进行中":
+            return True
+        return False
 
 class Comment:
     id = ""
