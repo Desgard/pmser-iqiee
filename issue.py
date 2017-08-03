@@ -42,7 +42,8 @@ class Issue:
 
     def is_in_week(self):
         now = datetime.today()
-        return now.strftime("%W") is self.resolved_time.strftime("%W")
+        # print(now.strftime("%W"), self.resolved_time.strftime("%W"))
+        return now.strftime("%W") == self.resolved_time.strftime("%W")
 
     def is_complete(self):
         if self.status == "已解决":

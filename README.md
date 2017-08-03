@@ -5,6 +5,40 @@
 
 ![](public/screenshot.png)
 
+## Introduction
+
+### Install
+
+```bash
+$ clone https://github.com/Desgard/pmser-iqiyi.git
+$ cd pmser-iqiyi
+$ source venv/bin/activity
+$ pip install -r requirement.txt
+$ chmod +x pmser-cli.py
+```
+
+### Help
+
+```bash
+$ ./pmser-cli.py -h
+usage: pmser-cli.py [-h] [-u USER] [-w] [-a]
+
+To build the weekly report quickly!
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -u USER, --user USER  Filter the item of this user.
+  -w, --week            Only show this week report.
+  -a, --all             [Default] Show all issues about the user.
+```
+
+### Usage
+
+```bash
+$ ./pmser-cli.py -u xxxx -w
+$ ./pmser-cli.py -u xxxx -a
+```
+
 ## MIT License
 
 Copyright (c) 2017 Desgard_Duan
