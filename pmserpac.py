@@ -3,7 +3,7 @@ from issue import Issue
 from config import key_dic
 
 url = "http://pms.qiyi.domain/sr/jira.issueviews:searchrequest-xml/temp/SearchRequest.xml"
-cookie = 'JSESSIONID=8DB196651065C1561CF2288807BCE054; atlassian.xsrf.token=BIM2-2D98-FCIE-BUVL|4d566777d0238c5f80370558535bdad7d2b7859a|lin'
+cookie = 'JSESSIONID=C059FB22D702EA0C3C98A07E7E68F5F0; atlassian.xsrf.token=BIM2-2D98-FCIE-BUVL|8810efc59a1966ed54bbd0794d5cb423d1f729be|lin'
 params = {}
 headers = {}
 
