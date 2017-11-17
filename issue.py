@@ -46,9 +46,7 @@ class Issue:
         return now.strftime("%W") == self.resolved_time.strftime("%W")
 
     def is_complete(self):
-        if self.status == "已解决":
-            return True
-        return False
+        return True
 
     def is_running(self):
         if self.status == "进行中":

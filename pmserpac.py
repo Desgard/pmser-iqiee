@@ -3,7 +3,8 @@ from issue import Issue
 from config import key_dic
 
 url = "http://pms.qiyi.domain/sr/jira.issueviews:searchrequest-xml/temp/SearchRequest.xml"
-cookie = 'JSESSIONID=C059FB22D702EA0C3C98A07E7E68F5F0; atlassian.xsrf.token=BIM2-2D98-FCIE-BUVL|8810efc59a1966ed54bbd0794d5cb423d1f729be|lin'
+cookie=''
+
 params = {}
 headers = {}
 
@@ -12,6 +13,11 @@ issue_res = []
 def configure_net(find_name):
     global params
     global headers
+
+    new_cookie = input("Please input the new cookie: ")
+
+    if new_cookie is "n":
+        new_cookie = cookie
 
     params = {
         'jqlQuery': 'assignee in (%r) ORDER BY created DESC' % find_name,
@@ -28,7 +34,7 @@ def configure_net(find_name):
         'Referer': 'http://pms.qiyi.domain/browse/TVGUOBUG-2148?jql=assignee in (%r) ORDER BY created DESC' % find_name,
         'Connection': 'keep-alive',
         'Cache-Control': 'no-cache',
-        'cookie': cookie,
+        'cookie': new_cookie,
     }
 
 
